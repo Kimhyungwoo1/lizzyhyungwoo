@@ -6,18 +6,6 @@ public class CountryVO {
 
 	private String countryId;
 	private String countryName;
-	private DrinkVO drinkVO;
-
-	public DrinkVO getDrinkVO() {
-		if ( drinkVO == null ){
-			drinkVO = new DrinkVO();
-		}
-		return drinkVO;
-	}
-
-	public void setDrinkVO(DrinkVO drinkVO) {
-		this.drinkVO = drinkVO;
-	}
 
 	public String getCountryId() {
 		return countryId;
