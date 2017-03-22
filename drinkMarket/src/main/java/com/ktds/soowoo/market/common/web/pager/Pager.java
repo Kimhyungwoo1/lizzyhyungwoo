@@ -32,8 +32,8 @@ public abstract class Pager {
 	 * 濡� 湲곕낯 �꽕�젙�맖.
 	 */
 	public Pager() {
-		this.printArticle = 10;
-		this.printPage = 10;
+		this.printArticle = 9;
+		this.printPage = 9;
 	}
 	
 	public Pager(int printArticle, int printPage) {

@@ -6,23 +6,21 @@
 <jsp:include page="/WEB-INF/template/common_header.jsp"/>
 <link rel="stylesheet" type="text/css" href="/boardTest/css/list_layout.css"/>
 
-	<div class="grid"> <!-- content 이하에서는 id말고 class 사용 -->
-		<p>술이 이만큼이나 있어요^^! [${drinkCount}개]</p>
+	<div class="grid"> 
+		<h3>술이 이만큼이나 있어요^^! [${drinkCount}개]</h3>
 		<table>
 			<tr>
-				<c:forEach items="${drinkList}" var="drink" varStatus="index"> <!-- index를 통해 몇 번째 반복인지 알 수 있다 -->
+				<c:forEach items="${drinkList}" var="drink" varStatus="index"> 
 					<td>
-						${index.index}<br/>
 						<div>
 							<a href="/drinkMarket/drink/detail?drinkId=${drink.drinkId}">
-							<!-- 보안 강화 : 사용자가 임의로 url에 접근할 수 없도록 (유추 X) 파라미터를 두개 넣음 -->
-								<img src="/drinkList/drink/post?drinkId=${drink.drinkId}" width="200px" height="200px"/><br/>
+								<img src="/drinkList/drink/post?drinkId=${drink.drinkId}" width="223px" height="236px"/><br/>
 							</a>
-							${drink.drinkName}<br/>
-							${drink.price}
+							<h3>${drink.drinkName}</h3>
+							<h4>${drink.price}</h4>
 						</div>
 					</td>
-					<c:if test="${(index.index + 1) % 5 == 0}">
+					<c:if test="${(index.index + 1) % 3 == 0}">
 						</tr>
 						<tr>
 					</c:if>
@@ -38,14 +36,12 @@
 	--></div><!--  	
  --></div><!-- 
 	--><div class="login">
-		<%-- <c:if test="${empty sessionScope._USER_}">
-		<!-- 로그인 안 됐을 경우(null=empty) : Session정보를 EL에서 가져옴 (jsp 내장 객체) -->
-			<jsp:include page="/WEB-INF/view/user/signIn.jsp"/> <!-- signIn.jsp를 그대로 보여주기 -->
+		<c:if test="${empty sessionScope._USER_}">
+			<jsp:include page="/WEB-INF/view/user/signIn.jsp"/>
 		</c:if>
-		<!-- 로그인을 했을 경우 -->
 		<c:if test="${not empty sessionScope._USER_}">
 			${sessionScope._USER_.userName}님, 환영쓰~
-		</c:if> --%>
+		</c:if>
 	</div>
 
 <jsp:include page="/WEB-INF/template/common_footer.jsp"/>

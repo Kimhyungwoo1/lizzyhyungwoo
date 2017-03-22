@@ -22,6 +22,10 @@
 	padding: 3px;
 }
 
+.grid > table {
+	width: 709px;
+}
+
 .grid > .pagingLink {
 	width: 30px;
 	margin: 0 auto;
