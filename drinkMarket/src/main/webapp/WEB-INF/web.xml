@@ -9,4 +9,14 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>ViewDrinkListServlet</display-name>
+    <servlet-name>ViewDrinkListServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.drink.web.ViewDrinkListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewDrinkListServlet</servlet-name>
+    <url-pattern>/drinkList</url-pattern>
+  </servlet-mapping>
 </web-app>

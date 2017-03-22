@@ -8,13 +8,11 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.taglibs.standard.lang.jstl.DivideOperator;
-import org.bouncycastle.asn1.dvcs.DVCSObjectIdentifiers;
-
 import com.ktds.soowoo.market.company.vo.CompanyVO;
 import com.ktds.soowoo.market.country.vo.CountryVO;
 import com.ktds.soowoo.market.drink.vo.DrinkSearchVO;
 import com.ktds.soowoo.market.drink.vo.DrinkVO;
+import com.ktds.soowoo.market.type.vo.TypeVO;
 
 public class DrinkDaoImpl implements DrinkDao {
 
@@ -45,10 +43,20 @@ public class DrinkDaoImpl implements DrinkDao {
 			query.append(" AND     D.CMPNY_ID = CM.CMPNY_ID "   );
 			query.append(" AND     D.TP_ID = T.TP_ID "   );
 			
-			if (drinkSearchVO.getCountryId())
-			
-			
-			stmt = conn.prepareStatement(query.toString());
+			if (drinkSearchVO.getCountryId() != null) {
+				query.append(" WHERE   D.CNTRY_ID = ? "   );
+				
+				stmt = conn.prepareStatement(query.toString());
+				stmt.setString(1, drinkSearchVO.getCountryId());
+			}
+			else if (drinkSearchVO.getTypeId() != null) {
+				query.append(" WHERE   D.TP_ID = ? "   );
+				stmt = conn.prepareStatement(query.toString());
+				stmt.setString(1, drinkSearchVO.getTypeId());
+			}
+			else {
+				stmt = conn.prepareStatement(query.toString());
+			}
 			
 			rs = stmt.executeQuery();
 			
@@ -130,7 +138,46 @@ public class DrinkDaoImpl implements DrinkDao {
 			query.append("         , CNTRY CN                  ");
 			query.append(" WHERE   CM.CMPNY_ID = D.CMPNY_ID    ");
 			query.append(" AND     CN.CNTRY_ID = D.CNTRY_ID    ");
-			query.append(" ORDER   BY   PRC   ASC    ");
+			
+			if (drinkSearchVO.getCountryId() != null) {
+				query.append(" WHERE   D.CNTRY_ID = ? "   );
+				query.append(" ORDER   BY   PRC   ASC    ");
+				query.append(" 					) A                             ");
+				query.append(" 			WHERE	ROWNUM <= ?                     ");
+				query.append(" 		)                                           ");
+				query.append(" WHERE	RNUM >= ?                               ");
+				
+				stmt = conn.prepareStatement(query.toString());
+				stmt.setString(1, drinkSearchVO.getCountryId());
+				stmt.setInt(2, drinkSearchVO.getPager().getEndArticleNumber());
+				stmt.setInt(3, drinkSearchVO.getPager().getStartArticleNumber());
+			}
+			else if (drinkSearchVO.getTypeId() != null) {
+				query.append(" WHERE   D.TP_ID = ? "   );
+				query.append(" ORDER   BY   PRC   ASC    ");
+				query.append(" 					) A                             ");
+				query.append(" 			WHERE	ROWNUM <= ?                     ");
+				query.append(" 		)                                           ");
+				query.append(" WHERE	RNUM >= ?                               ");
+				
+				stmt = conn.prepareStatement(query.toString());
+				stmt.setString(1, drinkSearchVO.getTypeId());
+				stmt.setInt(2, drinkSearchVO.getPager().getEndArticleNumber());
+				stmt.setInt(3, drinkSearchVO.getPager().getStartArticleNumber());
+			}
+			else {
+				query.append(" ORDER   BY   PRC   ASC    ");
+				query.append(" 					) A                             ");
+				query.append(" 			WHERE	ROWNUM <= ?                     ");
+				query.append(" 		)                                           ");
+				query.append(" WHERE	RNUM >= ?                               ");
+				
+				stmt = conn.prepareStatement(query.toString());
+				stmt.setInt(1, drinkSearchVO.getPager().getEndArticleNumber());
+				stmt.setInt(2, drinkSearchVO.getPager().getStartArticleNumber());
+			}
+			
+			/*query.append(" ORDER   BY   PRC   ASC    ");
 			query.append(" 					) A                             ");
 			query.append(" 			WHERE	ROWNUM <= ?                     ");
 			query.append(" 		)                                           ");
@@ -138,9 +185,10 @@ public class DrinkDaoImpl implements DrinkDao {
 
 			stmt = conn.prepareStatement(query.toString());
 			stmt.setInt(1, drinkSearchVO.getPager().getEndArticleNumber());
-			stmt.setInt(2, drinkSearchVO.getPager().getStartArticleNumber());
+			stmt.setInt(2, drinkSearchVO.getPager().getStartArticleNumber());*/
 			
 			rs = stmt.executeQuery();
+			
 			List<DrinkVO> drinkList = new ArrayList<DrinkVO>();
 			DrinkVO drinkVO = null;
 			CountryVO countryVO = null;
