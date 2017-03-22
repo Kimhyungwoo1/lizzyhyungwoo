@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#asd {
+	text-align: center;
+}
+
+#sign {
+	display : inline-block;
+	
+}
+
+#asd > #sign > #signUp {
+	text-align: right;
+}
