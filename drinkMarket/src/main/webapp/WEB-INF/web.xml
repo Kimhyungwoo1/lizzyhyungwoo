@@ -19,4 +19,14 @@
     <servlet-name>ViewDrinkListServlet</servlet-name>
     <url-pattern>/drinkList</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewSignInServlet</display-name>
+    <servlet-name>ViewSignInServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.user.web.ViewSignInServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewSignInServlet</servlet-name>
+    <url-pattern>/user/signin</url-pattern>
+  </servlet-mapping>
 </web-app>
