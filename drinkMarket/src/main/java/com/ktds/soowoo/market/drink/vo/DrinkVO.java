@@ -17,9 +17,11 @@ public class DrinkVO {
 	private String detail;
 	private double pointPct;
 	private int buyCount;
+	private String drinkType;
 	
 	private CompanyVO companyVO;
 	private CountryVO countryVO;
+	private TypeVO typeVO;
 	
 	public String getDrinkId() {
 		return drinkId;
@@ -116,6 +118,14 @@ public class DrinkVO {
 	public void setBuyCount(int buyCount) {
 		this.buyCount = buyCount;
 	}
+	
+	public String getDrinkType() {
+		return drinkType;
+	}
+
+	public void setDrinkType(String drinkType) {
+		this.drinkType = drinkType;
+	}
 
 	public CompanyVO getCompanyVO() {
 		if (companyVO == null) {
@@ -129,11 +139,25 @@ public class DrinkVO {
 	}
 
 	public CountryVO getCountryVO() {
+		if (countryVO == null) {
+			countryVO = new CountryVO();
+		}
 		return countryVO;
 	}
 
 	public void setCountryVO(CountryVO countryVO) {
 		this.countryVO = countryVO;
+	}
+
+	public TypeVO getTypeVO() {
+		if (typeVO == null) {
+			typeVO = new TypeVO();
+		}
+		return typeVO;
+	}
+
+	public void setTypeVO(TypeVO typeVO) {
+		this.typeVO = typeVO;
 	}
 	
 }
