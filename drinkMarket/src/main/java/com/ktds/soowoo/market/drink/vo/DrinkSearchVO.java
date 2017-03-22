@@ -6,6 +6,9 @@ import com.ktds.soowoo.market.common.web.pager.PagerFactory;
 public class DrinkSearchVO {
 
 	private Pager pager;
+	
+	private String typeId;
+	private String countryId;
 
 	public Pager getPager() {
 		if (pager == null) {
@@ -16,6 +19,22 @@ public class DrinkSearchVO {
 
 	public void setPager(Pager pager) {
 		this.pager = pager;
+	}
+
+	public String getTypeId() {
+		return typeId;
+	}
+
+	public void setTypeId(String typeId) {
+		this.typeId = typeId;
+	}
+
+	public String getCountryId() {
+		return countryId;
+	}
+
+	public void setCountryId(String countryId) {
+		this.countryId = countryId;
 	}
 	
 }
