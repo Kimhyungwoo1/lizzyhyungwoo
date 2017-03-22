@@ -2,6 +2,7 @@ package com.ktds.soowoo.market.drink.vo;
 
 import com.ktds.soowoo.market.company.vo.CompanyVO;
 import com.ktds.soowoo.market.country.vo.CountryVO;
+import com.ktds.soowoo.market.type.vo.TypeVO;
 
 public class DrinkVO {
 	
