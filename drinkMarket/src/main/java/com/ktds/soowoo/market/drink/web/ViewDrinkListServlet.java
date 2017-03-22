@@ -34,7 +34,7 @@ public class ViewDrinkListServlet extends HttpServlet {
 		List<DrinkVO> drinkList = drinkService.getAllDrinks(drinkSearchVO);
 
 		PageExplorer pager = new ClassicPageExplorer(drinkSearchVO.getPager());
-
+		
 		request.setAttribute("drinkList", drinkList);
 		request.setAttribute("drinkCount", drinkSearchVO.getPager().getTotalArticleCount());
 		request.setAttribute("pager", pager.getPagingList("pageNo", "[@]", "prev", "next", "searchForm"));

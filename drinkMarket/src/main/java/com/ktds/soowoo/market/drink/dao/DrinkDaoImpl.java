@@ -95,7 +95,7 @@ public class DrinkDaoImpl implements DrinkDao {
 	@Override
 	public List<DrinkVO> selectAllDrinks(DrinkSearchVO drinkSearchVO) {
 		try {
-			Class.forName("oracle.jdbc.driver.oracleDriver");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
@@ -133,13 +133,18 @@ public class DrinkDaoImpl implements DrinkDao {
 			query.append("         , CM.LCTN                   ");
 			query.append("         , CN.CNTRY_ID CN_CNTRY_ID   ");
 			query.append("         , CN.CNTRY_NM               ");
+			query.append("         , T.TP_ID T_TP_ID               ");
+			query.append("         , T.TP_NM               ");
 			query.append(" FROM    DRNK D                      ");
 			query.append("         , CMPNY CM                  ");
 			query.append("         , CNTRY CN                  ");
+			query.append("         , TP T                  ");
 			query.append(" WHERE   CM.CMPNY_ID = D.CMPNY_ID    ");
 			query.append(" AND     CN.CNTRY_ID = D.CNTRY_ID    ");
+			query.append(" AND     T.TP_ID = D.TP_ID    ");
 			
 			if (drinkSearchVO.getCountryId() != null) {
+				System.out.println("1");
 				query.append(" WHERE   D.CNTRY_ID = ? "   );
 				query.append(" ORDER   BY   PRC   ASC    ");
 				query.append(" 					) A                             ");
@@ -153,6 +158,7 @@ public class DrinkDaoImpl implements DrinkDao {
 				stmt.setInt(3, drinkSearchVO.getPager().getStartArticleNumber());
 			}
 			else if (drinkSearchVO.getTypeId() != null) {
+				System.out.println("2");
 				query.append(" WHERE   D.TP_ID = ? "   );
 				query.append(" ORDER   BY   PRC   ASC    ");
 				query.append(" 					) A                             ");
@@ -259,7 +265,7 @@ public class DrinkDaoImpl implements DrinkDao {
 	@Override
 	public DrinkVO selectOneDrink(String drinkId) {
 		try {
-			Class.forName("oracle.jdbc.driver.oracleDriver");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
@@ -373,7 +379,7 @@ public class DrinkDaoImpl implements DrinkDao {
 	@Override
 	public int insertOneDrink(DrinkVO drinkVO) {
 		try {
-			Class.forName("oracle.jdbc.driver.oracleDriver");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
@@ -455,7 +461,7 @@ public class DrinkDaoImpl implements DrinkDao {
 	@Override
 	public int updateOneDrink(DrinkVO drinkVO) {
 		try {
-			Class.forName("oracle.jdbc.driver.oracleDriver");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
@@ -519,7 +525,7 @@ public class DrinkDaoImpl implements DrinkDao {
 	@Override
 	public int deleteOneDrink(String drinkId) {
 		try {
-			Class.forName("oracle.jdbc.driver.oracleDriver");
+			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
 			throw new RuntimeException(e.getMessage(), e);
 		}
