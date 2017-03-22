@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+encoding//src/main/java/com/ktds/soowoo/market/common/web/download/DownloadUtil.java=UTF-8
+encoding//src/main/java/com/ktds/soowoo/market/common/web/download/MultipartHttpServletRequest.java=UTF-8
+encoding//src/main/java/com/ktds/soowoo/market/common/web/pager/ClassicPageExplorer.java=UTF-8
+encoding//src/main/java/com/ktds/soowoo/market/common/web/pager/ListPageExplorer.java=UTF-8
+encoding//src/main/java/com/ktds/soowoo/market/common/web/pager/PageExplorer.java=UTF-8
+encoding//src/main/java/com/ktds/soowoo/market/common/web/pager/Pager.java=UTF-8
+encoding//src/main/java/com/ktds/soowoo/market/common/web/pager/Test.java=UTF-8

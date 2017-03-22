@@ -1,6 +1,8 @@
 package com.ktds.soowoo.market.company.vo;
 
 public class CompanyVO {
+	
+	
 
 	private String companyId;
 	private String companyName;
