@@ -387,7 +387,7 @@ public class DrinkDaoImpl implements DrinkDao {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");
 
 			StringBuffer query = new StringBuffer();
-			query.append(" INSERT  INTO    DRNK    {               ");
+			query.append(" INSERT  INTO    DRNK    (               ");
 			query.append(" 			                DRNK_ID        ");
 			query.append(" 			                , DRNK_NM      ");
 			query.append(" 			                , CNTRY_ID     ");
@@ -401,9 +401,9 @@ public class DrinkDaoImpl implements DrinkDao {
 			query.append(" 			                , BY_CNT       ");
 			query.append(" 			                , CMPNY_ID     ");
 			query.append(" 			                , TP_ID        ");
-			query.append(" 			            }                  ");
-			query.append(" 			    VALUES  {                  ");
-			query.append(" 			                'D-' || TO_CHAR(SYSDATE, 'YYYYMMDDHH24') || '-' || LPAD(ARTST_ID_SEQ.NEXTVAL, 6, '0')              ");
+			query.append(" 			            )                  ");
+			query.append(" 			    VALUES  (                  ");
+			query.append(" 			                'D-' || TO_CHAR(SYSDATE, 'YYYYMMDDHH24') || '-' || LPAD(DRNK_ID_SEQ.NEXTVAL, 6, '0')              ");
 			query.append(" 			                , ?            ");
 			query.append(" 			                , ?            ");
 			query.append(" 			                , ?            ");
@@ -416,7 +416,7 @@ public class DrinkDaoImpl implements DrinkDao {
 			query.append(" 			                , 0            ");
 			query.append(" 			                , ?            ");
 			query.append(" 			                , ?            ");
-			query.append(" 			            }                  ");
+			query.append(" 			            )                  ");
 			
 			stmt = conn.prepareStatement(query.toString());
 			stmt.setString(1, drinkVO.getDrinkName());
