@@ -38,8 +38,8 @@
   <servlet-mapping>
     <servlet-name>DoLogoutActionServlet</servlet-name>
     <url-pattern>/user/logout</url-pattern>
-    </servlet-mapping>
-   <servlet>
+  </servlet-mapping>
+  <servlet>
     <display-name>DosignUpServlet</display-name>
     <servlet-name>DosignUpServlet</servlet-name>
     <servlet-class>com.ktds.soowoo.market.user.web.DosignUpServlet</servlet-class>
@@ -47,5 +47,25 @@
   <servlet-mapping>
     <servlet-name>DosignUpServlet</servlet-name>
     <url-pattern>/user/signUp</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewPostImageServlet</display-name>
+    <servlet-name>ViewPostImageServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.drink.web.ViewPostImageServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewPostImageServlet</servlet-name>
+    <url-pattern>/drink/post</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewDetailServlet</display-name>
+    <servlet-name>ViewDetailServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.drink.web.ViewDetailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewDetailServlet</servlet-name>
+    <url-pattern>/drink/detail</url-pattern>
   </servlet-mapping>
 </web-app>

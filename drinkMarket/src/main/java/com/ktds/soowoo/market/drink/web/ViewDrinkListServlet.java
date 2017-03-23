@@ -29,6 +29,11 @@ public class ViewDrinkListServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		doPost(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		String pageNo = request.getParameter("pageNo");
 		DrinkSearchVO drinkSearchVO = new DrinkSearchVO();
 		drinkSearchVO.getPager().setPageNumber(pageNo);
@@ -48,10 +53,6 @@ public class ViewDrinkListServlet extends HttpServlet {
 
 		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/mainList.jsp");
 		dispatcher.forward(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 	}
 
 }
