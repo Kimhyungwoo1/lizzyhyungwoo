@@ -12,12 +12,16 @@
 		<div class="detail_content" style="display: inline-block; width:709px;">
 			<table id ="table">
 				<tr>
-					<th>가격</th>
-					<td>${drink.price}</td>
-				</tr>
-				<tr>
 					<th>종류</th>
 					<td>${drink.typeVO.typeName}</td>
+				</tr>
+				<tr>
+					<th>용량</th>
+					<td>${drink.ml} ml</td>
+				</tr>
+				<tr>
+					<th>도수</th>
+					<td>${drink.degree} 도</td>
 				</tr>
 				<tr>
 					<th>제조사</th>
@@ -26,6 +30,14 @@
 				<tr>
 					<th>원산지</th>
 					<td>${drink.countryVO.countryName}</td>
+				</tr>
+				<tr>
+					<th>가격</th>
+					<td>${drink.price} won</td>
+				</tr>
+				<tr>
+					<th>적립금</th>
+					<td>${drink.price * drink.pointPct} point</td>
 				</tr>
 			</table>
 			<br/>
