@@ -68,4 +68,14 @@
     <servlet-name>ViewDetailServlet</servlet-name>
     <url-pattern>/drink/detail</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoUpdatePointServlet</display-name>
+    <servlet-name>DoUpdatePointServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.user.web.DoUpdatePointServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoUpdatePointServlet</servlet-name>
+    <url-pattern>/user/updatePoint</url-pattern>
+  </servlet-mapping>
 </web-app>

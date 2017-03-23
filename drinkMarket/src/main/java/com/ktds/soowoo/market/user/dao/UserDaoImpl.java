@@ -149,7 +149,7 @@ public class UserDaoImpl implements UserDao {
 			StringBuffer query = new StringBuffer();
 			query.append(" UPDATE	USR ");
 			query.append(" SET		PNT = PNT + ? ");
-			query.append(" WHERE	USR_IN = ? ");
+			query.append(" WHERE	USR_ID = ? ");
 
 			stmt = conn.prepareStatement(query.toString());
 			stmt.setInt(1, point);
