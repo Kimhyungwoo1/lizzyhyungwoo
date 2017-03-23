@@ -42,8 +42,8 @@
 </script>
 </head>
 <body>
+<div id=wrapper>
 	<div class="gnb">
-
 		<ul>
 			<li><a>나라별</a>
 				<ul>
@@ -68,5 +68,5 @@
 	<!-- <a href="/drinkMarket/type" style="margin-right:10px; margin-left:10px; text-decoration:none">종류별</a>
 			<a id=country href="/drinkMarket/country" style="margin-right:10px; margin-left:10px; text-decoration:none">나라별</a>
 		 -->
-	</div>
-	<div id="content">
+
+		<div id="content">
