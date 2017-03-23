@@ -40,7 +40,7 @@
 		</c:if>
 		<c:if test="${not empty sessionScope._USER_}">
 			${sessionScope._USER_.userName}님, 환영쓰~
-			<input type="button" value="logOut" onclick="location.href='/drinkMarket/user/logout'" />
+			<input type="button" value="LogOut" onclick="location.href='/drinkMarket/user/logout'" />
 		</c:if>
 	</div>
 
