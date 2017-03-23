@@ -1,5 +1,7 @@
 package com.ktds.soowoo.market.country.service;
 
+import java.util.List;
+
 import com.ktds.soowoo.market.country.biz.CountryBiz;
 import com.ktds.soowoo.market.country.biz.CountryBizImpl;
 import com.ktds.soowoo.market.country.vo.CountryVO;
@@ -23,8 +25,8 @@ public class CountryServiceImpl implements CountryService{
 	}
 
 	@Override
-	public CountryVO getOneCountry(String countryId) {
-		return countryBiz.getOneCountry(countryId);
+	public List<CountryVO> allListCountry() {
+		return countryBiz.allListCountry();
 	}
 
 }
