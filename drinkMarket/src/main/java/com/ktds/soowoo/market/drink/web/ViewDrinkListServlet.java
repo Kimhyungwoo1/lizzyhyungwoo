@@ -8,6 +8,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.ktds.soowoo.market.common.web.pager.ClassicPageExplorer;
 import com.ktds.soowoo.market.common.web.pager.PageExplorer;
@@ -15,6 +16,7 @@ import com.ktds.soowoo.market.drink.service.DrinkService;
 import com.ktds.soowoo.market.drink.service.DrinkServiceImpl;
 import com.ktds.soowoo.market.drink.vo.DrinkSearchVO;
 import com.ktds.soowoo.market.drink.vo.DrinkVO;
+import com.ktds.soowoo.market.user.vo.UserVO;
 
 public class ViewDrinkListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -35,6 +37,11 @@ public class ViewDrinkListServlet extends HttpServlet {
 
 		PageExplorer pager = new ClassicPageExplorer(drinkSearchVO.getPager());
 		
+		HttpSession session = request.getSession(true);
+		UserVO userVO = (UserVO)session.getAttribute("_USER_");
+		boolean isLogin = userVO != null ? true : false;
+		
+		request.setAttribute("isLogin", isLogin);
 		request.setAttribute("drinkList", drinkList);
 		request.setAttribute("drinkCount", drinkSearchVO.getPager().getTotalArticleCount());
 		request.setAttribute("pager", pager.getPagingList("pageNo", "[@]", "prev", "next", "searchForm"));

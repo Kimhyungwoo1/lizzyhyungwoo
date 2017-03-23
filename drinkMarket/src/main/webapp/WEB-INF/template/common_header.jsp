@@ -10,16 +10,13 @@
 <script type="text/javascript" src="/drinkMarket/static/js/jquery-3.1.1.min.js"></script>
 </head>
 <body>
-	<div id="wrapper"> <!-- wrapper = content를 감싼다 -->
-		<div id="nav"> <!-- nav = navigation bar -->
-			<c:choose>
-				<c:when test="!${isLogin}">
-					<a href="/boardTest/user/signIn">Login</a><a href="/boardTest/user/signUp">Join</a>
+	<div id="wrapper"> 
+		<div id="nav"> 
+			<%-- <c:choose>
+				<c:when test="${isLogin}">
+					<a href="/drinkMarket/user/logout">Logout</a>
 				</c:when>
-				<c:otherwise>
-					<a href="/boardTest/user/doSignOut">Logout</a>
-				</c:otherwise>
-			</c:choose>
+			</c:choose> --%>
 			
 		</div>
 	<div id="content">

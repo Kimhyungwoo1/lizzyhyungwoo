@@ -29,4 +29,14 @@
     <servlet-name>ViewSignInServlet</servlet-name>
     <url-pattern>/user/signin</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DoLogoutActionServlet</display-name>
+    <servlet-name>DoLogoutActionServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.user.web.DoLogoutActionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DoLogoutActionServlet</servlet-name>
+    <url-pattern>/user/logout</url-pattern>
+  </servlet-mapping>
 </web-app>
