@@ -19,17 +19,18 @@ a {
 }
 
 .gnb {
-	width: 640px;
+	width: 964px;
 	height: 50px;
-	text-align: left;
+	margin : 0px;
+	text-align: center;
 }
 
 /* 메인메뉴 영역 */
 .gnb>ul {
-	width: 620px;
-	height: 30px;
+	width: 964px;
+	height: 50px;
 	background: #000000;
-	padding: 20px 0 0 20px;
+	padding: 0px;
 }
 
 .gnb>ul>li {
@@ -37,6 +38,7 @@ a {
 	width: 100px;
 	height: 30px;
 	margin-right: 5px;
+	margin-top: 10px;
 	position: relative;
 }
 
@@ -47,6 +49,7 @@ a {
 	text-align: center;
 	color: #fff;
 	background: black;
+	font-size: 20px;
 }
 
 .gnb ul li a:hover {
