@@ -12,11 +12,7 @@
 <body>
 	<div id="wrapper"> 
 		<div id="nav"> 
-			<%-- <c:choose>
-				<c:when test="${isLogin}">
-					<a href="/drinkMarket/user/logout">Logout</a>
-				</c:when>
-			</c:choose> --%>
-			
+			<a href="/drinkMarket/type" style="margin-right:10px; margin-left:10px; text-decoration:none">종류별</a>
+			<a href="/drinkMarket/country" style="margin-right:10px; margin-left:10px; text-decoration:none">나라별</a>
 		</div>
 	<div id="content">

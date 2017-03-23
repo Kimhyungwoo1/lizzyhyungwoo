@@ -14,7 +14,7 @@
 					<td>
 						<div>
 							<a href="/drinkMarket/drink/detail?drinkId=${drink.drinkId}">
-								<img src="/drinkList/drink/post?drinkId=${drink.drinkId}" width="223px" height="236px"/><br/>
+								<img src="/drinkMarket/drink/post?drinkId=${drink.drinkId}" width="223px" height="236px"/><br/>
 							</a>
 							<h3>${drink.drinkName}</h3>
 							<h4>${drink.price}</h4>
