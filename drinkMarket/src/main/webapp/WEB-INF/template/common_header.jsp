@@ -35,7 +35,7 @@
 			}, function(){  
 				$(this).parent().find(".subnav").slideUp('slow');                 //subnav에서 마우스 벗어났을 시 원위치시킴  
 			});  
-		});  
+		});
 		
 	});  
 
@@ -45,20 +45,23 @@
 <div id=wrapper>
 	<div class="gnb">
 		<ul>
-			<li><a>나라별</a>
+			<li>
+				<a>나라별</a>
 				<ul>
-					<li><a href="drinkMarket/drinkList?countryId">CANADA</a></li>
-					<li><a href="drinkMarket/drinkList?countryId">서브메뉴2</a></li>
-					<li><a href="drinkMarket/drinkList?countryId">서브메뉴3</a></li>
-					<li><a href="drinkMarket/drinkList?countryId">서브메뉴4</a></li>
-				</ul></li>
+					<c:forEach items="countryList" var="country">
+						<li><a href="drinkMarket/country/list?countryId=${country.countryId}">${country.countryName}</a></li>
+					</c:forEach>
+				</ul>
+			</li>
 
-			<li><a>종류별</a>
+			<li>
+				<a>종류별</a>
 				<ul>
-					<li><a href="drinkMarket/drinkList?typeId">서브메뉴1</a></li>
-					<li><a href="drinkMarket/drinkList?typeId">서브메뉴2</a></li>
-					<li><a href="drinkMarket/drinkList?typeId">서브메뉴3</a></li>
-				</ul></li>
+					<c:forEach items="typeList" var="type">
+						<li><a href="drinkMarket/type/list?typeId=${type.typeId}">${type.typeName}</a></li>
+					</c:forEach>
+				</ul>
+			</li>
 		</ul>
 
 	</div>

@@ -11,7 +11,7 @@
 			<tr>
 				<c:forEach items="${drinkList}" var="drink" varStatus="index"> 
 					<td>
-						<div>
+						<div style="text-align:center;">
 							<a href="/drinkMarket/drink/detail?drinkId=${drink.drinkId}">
 								<img src="/drinkMarket/drink/post?drinkId=${drink.drinkId}" width="223px" height="236px"/><br/>
 							</a>
