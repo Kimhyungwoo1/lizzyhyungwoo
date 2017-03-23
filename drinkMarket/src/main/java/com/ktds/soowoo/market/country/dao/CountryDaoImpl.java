@@ -10,7 +10,7 @@ import com.ktds.soowoo.market.country.vo.CountryVO;
 
 public class CountryDaoImpl implements CountryDao {
 
-	private String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+	private String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 	@Override
 	public int insertCountry(CountryVO countryVO) {

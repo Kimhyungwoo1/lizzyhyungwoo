@@ -28,7 +28,7 @@ public class DrinkDaoImpl implements DrinkDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 		
-		String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+		String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 		
 		try {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");
@@ -104,7 +104,7 @@ public class DrinkDaoImpl implements DrinkDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
-		String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+		String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 		try {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");
@@ -274,7 +274,7 @@ public class DrinkDaoImpl implements DrinkDao {
 		PreparedStatement stmt = null;
 		ResultSet rs = null;
 
-		String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+		String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 		try {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");
@@ -387,7 +387,7 @@ public class DrinkDaoImpl implements DrinkDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 
-		String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+		String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 		try {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");
@@ -469,7 +469,7 @@ public class DrinkDaoImpl implements DrinkDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 
-		String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+		String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 		try {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");
@@ -533,7 +533,7 @@ public class DrinkDaoImpl implements DrinkDao {
 		Connection conn = null;
 		PreparedStatement stmt = null;
 
-		String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+		String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 		try {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");

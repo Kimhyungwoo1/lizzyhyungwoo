@@ -8,6 +8,8 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="/drinkMarket/static/css/common_layout.css"/>
 <script type="text/javascript" src="/drinkMarket/static/js/jquery-3.1.1.min.js"></script>
+<script type="text/javascript">
+</script>
 </head>
 <body>
 	<div id="wrapper"> 

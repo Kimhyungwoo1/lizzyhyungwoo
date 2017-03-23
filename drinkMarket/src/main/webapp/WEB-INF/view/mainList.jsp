@@ -4,7 +4,7 @@
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <jsp:include page="/WEB-INF/template/common_header.jsp"/>
-<link rel="stylesheet" type="text/css" href="/boardTest/css/list_layout.css"/>
+<link rel="stylesheet" type="text/css" href="/drinkMarket/static/css/list_layout.css"/>
 
 	<div class="grid"> 
 		<h3>술이 이만큼이나 있어요^^! [${drinkCount}개]</h3>
@@ -41,7 +41,7 @@
 		</c:if>
 		<c:if test="${not empty sessionScope._USER_}">
 			${sessionScope._USER_.userName}님, 환영쓰~
-			<input type="button" id="logOut" value="logOut" />
+			<input type="button" value="logOut" onclick="location.href='/drinkMarket/user/logout'" />
 		</c:if>
 	</div>
 

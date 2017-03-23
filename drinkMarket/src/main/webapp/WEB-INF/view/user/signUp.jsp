@@ -1,9 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="/drinkMarket/static/css/signUp.css"/>
 <title>SignUp</title>
 <script type="text/javascript" src="/drinkMarket/static/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
@@ -18,13 +19,14 @@
 </script>
 </head>
 <body>
-	
-	<form id=signUP>
-		<input type="text" name="userId" placeholder="¾ÆÀÌµð¸¦ ÀÔ·ÂÇÏ¼¼¿ä." />
-		<input type="text" name="userPassword" placeholder="Æä½º¿öµå¸¦ ÀÔ·ÂÇÏ¼¼¿ä." />
-		<input type="text" name="userName" placeholder="ÀÌ¸§¸¦ ÀÔ·ÂÇÏ¼¼¿ä." />
-		<input type="button" value="È®ÀÎ" />
-	</form>
+	<div id=all>
+		<form id=signUP>
+			<input type="text" name="userId" placeholder="ì•„ì´ë””ë¥¼ ìž…ë ¥í•˜ì„¸ìš”." /><br/>
+			<input type="text" name="userPassword" placeholder="íŽ˜ìŠ¤ì›Œë“œë¥¼ ìž…ë ¥í•˜ì„¸ìš”." /><br/>
+			<input type="text" name="userName" placeholder="ì´ë¦„ë¥¼ ìž…ë ¥í•˜ì„¸ìš”." /><br/>
+			<input type="button" value="í™•ì¸" />
+		</form>
+	</div>
 	
 </body>
 </html>

@@ -9,7 +9,7 @@ import com.ktds.soowoo.market.company.vo.CompanyVO;
 
 public class CompanyDaoImpl implements CompanyDao {
 
-	private String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+	private String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 	@Override
 	public int insertCompany(CompanyVO companyVO) {

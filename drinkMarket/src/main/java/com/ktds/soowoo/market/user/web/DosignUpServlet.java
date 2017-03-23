@@ -1,39 +1,55 @@
 package com.ktds.soowoo.market.user.web;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- * Servlet implementation class DosignUpServlet
- */
+import com.ktds.soowoo.market.user.service.UserService;
+import com.ktds.soowoo.market.user.service.UserServiceImpl;
+import com.ktds.soowoo.market.user.vo.UserVO;
+
 public class DosignUpServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public DosignUpServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+	private UserService userService;
+	
+	public DosignUpServlet() {
+		userService = new UserServiceImpl();
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/view/user/signUp.jsp");
+		dispatcher.forward(request, response);
+		
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		String userId = request.getParameter("userId");
+		String userName = request.getParameter("userName");
+		String userPassword = request.getParameter("userPassword");
+		
+		UserVO userVO = new UserVO();
+		userVO.setUserId(userId);
+		userVO.setUserName(userName);
+		userVO.setUserPassword(userPassword);
+		
+		boolean userSignUp = userService.addUser(userVO);
+		
+		if( userSignUp ){
+			response.sendRedirect("/drinkMarket/drinkList");
+		}
+		else {
+			response.sendRedirect("/drinkMarket/user/signUp");
+		}
+		
 	}
 
 }

@@ -12,7 +12,7 @@ import com.ktds.soowoo.market.type.vo.TypeVO;
 
 public class TypeDaoImpl implements TypeDao {
 
-	private String oracleUrl = "jdbc:oracle:thin:@localhost:1521:XE";
+	private String oracleUrl = "jdbc:oracle:thin:@192.168.201.29:1521:XE";
 
 	@Override
 	public int insertType(TypeVO typeVO) {
