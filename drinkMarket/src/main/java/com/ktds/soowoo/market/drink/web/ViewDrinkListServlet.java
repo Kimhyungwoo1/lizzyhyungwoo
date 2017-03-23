@@ -12,19 +12,30 @@ import javax.servlet.http.HttpSession;
 
 import com.ktds.soowoo.market.common.web.pager.ClassicPageExplorer;
 import com.ktds.soowoo.market.common.web.pager.PageExplorer;
+import com.ktds.soowoo.market.country.service.CountryService;
+import com.ktds.soowoo.market.country.service.CountryServiceImpl;
+import com.ktds.soowoo.market.country.vo.CountryVO;
 import com.ktds.soowoo.market.drink.service.DrinkService;
 import com.ktds.soowoo.market.drink.service.DrinkServiceImpl;
 import com.ktds.soowoo.market.drink.vo.DrinkSearchVO;
 import com.ktds.soowoo.market.drink.vo.DrinkVO;
+import com.ktds.soowoo.market.type.service.TypeService;
+import com.ktds.soowoo.market.type.service.TypeServiceImpl;
+import com.ktds.soowoo.market.type.vo.TypeVO;
 import com.ktds.soowoo.market.user.vo.UserVO;
 
 public class ViewDrinkListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private DrinkService drinkService;
+	private CountryService countryService;
+	private TypeService typeService;
 
 	public ViewDrinkListServlet() {
 		drinkService = new DrinkServiceImpl();
+		countryService = new CountryServiceImpl();
+		typeService = new TypeServiceImpl();
+		
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -39,6 +50,8 @@ public class ViewDrinkListServlet extends HttpServlet {
 		drinkSearchVO.getPager().setPageNumber(pageNo);
 
 		List<DrinkVO> drinkList = drinkService.getAllDrinks(drinkSearchVO);
+		List<CountryVO> countryList = countryService.allListCountry();
+		List<TypeVO> typeList = typeService.AllTypeList();
 
 		PageExplorer pager = new ClassicPageExplorer(drinkSearchVO.getPager());
 		
@@ -48,6 +61,8 @@ public class ViewDrinkListServlet extends HttpServlet {
 		
 		request.setAttribute("isLogin", isLogin);
 		request.setAttribute("drinkList", drinkList);
+		request.setAttribute("countryList", countryList);
+		request.setAttribute("typeList", typeList);
 		request.setAttribute("drinkCount", drinkSearchVO.getPager().getTotalArticleCount());
 		request.setAttribute("pager", pager.getPagingList("pageNo", "[@]", "prev", "next", "searchForm"));
 
