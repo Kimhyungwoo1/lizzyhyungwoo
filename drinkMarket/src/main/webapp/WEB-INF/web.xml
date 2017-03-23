@@ -68,4 +68,24 @@
     <servlet-name>ViewDetailServlet</servlet-name>
     <url-pattern>/drink/detail</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewCountryListServlet</display-name>
+    <servlet-name>ViewCountryListServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.country.web.ViewCountryListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewCountryListServlet</servlet-name>
+    <url-pattern>/country/list</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewTypeListServlet</display-name>
+    <servlet-name>ViewTypeListServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.type.web.ViewTypeListServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewTypeListServlet</servlet-name>
+    <url-pattern>/type/list</url-pattern>
+  </servlet-mapping>
 </web-app>

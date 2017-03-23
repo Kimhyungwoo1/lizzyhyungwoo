@@ -1,5 +1,7 @@
 package com.ktds.soowoo.market.country.biz;
 
+import java.util.List;
+
 import com.ktds.soowoo.market.country.dao.CountryDao;
 import com.ktds.soowoo.market.country.dao.CountryDaoImpl;
 import com.ktds.soowoo.market.country.vo.CountryVO;
@@ -23,8 +25,8 @@ public class CountryBizImpl implements CountryBiz{
 	}
 
 	@Override
-	public CountryVO getOneCountry(String countryId) {
-		return countryDao.selectOneCountry(countryId);
+	public List<CountryVO> allListCountry() {
+		return countryDao.getAllListCountry();
 	}
 
 }

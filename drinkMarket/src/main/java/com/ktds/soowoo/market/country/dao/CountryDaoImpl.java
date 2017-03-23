@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.ktds.soowoo.market.country.vo.CountryVO;
 
@@ -104,7 +106,7 @@ public class CountryDaoImpl implements CountryDao {
 	}
 
 	@Override
-	public CountryVO selectOneCountry(String countryId) {
+	public List<CountryVO> getAllListCountry() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 		} catch (ClassNotFoundException e) {
@@ -119,24 +121,27 @@ public class CountryDaoImpl implements CountryDao {
 			conn = DriverManager.getConnection(oracleUrl, "SUL", "sul");
 
 			StringBuffer query = new StringBuffer();
-			query.append(" SELECT		CNTRY_ID ");
-			query.append(" 				, CNTRY_NM ");
-			query.append(" FROM			CNTRY ");
-			query.append(" WHERE		CNTRY_ID = ? ");
+			query.append(" SELECT	CNTRY_ID ");
+			query.append(" 			, CNTRY_NM ");
+			query.append(" FROM		CNTRY ");
+			query.append(" ORDER	BY CNTRY_ID DESC ");
 
 			stmt = conn.prepareStatement(query.toString());
-			stmt.setString(1, countryId);
-
+			
 			rs = stmt.executeQuery();
-
+			
 			CountryVO countryVO = null;
-			if (rs.next()) {
+			List<CountryVO> countryList = new ArrayList<CountryVO>();
+			
+			while (rs.next()) {
 				countryVO = new CountryVO();
 				countryVO.setCountryId(rs.getString("CNTRY_ID"));
 				countryVO.setCountryName(rs.getString("CNTRY_NM"));
+				
+				countryList.add(countryVO);
 			}
 
-			return countryVO;
+			return countryList;
 
 		} catch (SQLException e) {
 			throw new RuntimeException(e.getMessage(), e);
