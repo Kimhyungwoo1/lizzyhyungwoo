@@ -38,5 +38,14 @@
   <servlet-mapping>
     <servlet-name>DoLogoutActionServlet</servlet-name>
     <url-pattern>/user/logout</url-pattern>
+    </servlet-mapping>
+   <servlet>
+    <display-name>DosignUpServlet</display-name>
+    <servlet-name>DosignUpServlet</servlet-name>
+    <servlet-class>com.ktds.soowoo.market.user.web.DosignUpServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DosignUpServlet</servlet-name>
+    <url-pattern>/user/signUp</url-pattern>
   </servlet-mapping>
 </web-app>

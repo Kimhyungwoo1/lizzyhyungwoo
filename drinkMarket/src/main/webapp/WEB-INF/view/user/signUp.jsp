@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -8,13 +8,18 @@
 <script type="text/javascript" src="/drinkMarket/static/js/jquery-3.1.1.min.js"></script>
 <script type="text/javascript">
 	$().ready(function () {
-		
+		$("#signUp").find("input[type=button]").click(function() {
+			$("#signUP").attr({
+				"method" : "post",
+				"action" : "/drinkMarket/user/signUP"
+			});
+		});
 	});
 </script>
 </head>
 <body>
 	
-	<form>
+	<form id=signUP>
 		<input type="text" name="userId" placeholder="아이디를 입력하세요." />
 		<input type="text" name="userPassword" placeholder="페스워드를 입력하세요." />
 		<input type="text" name="userName" placeholder="이름를 입력하세요." />
