@@ -9,6 +9,15 @@
 	
 }
 
-#asd > #sign > #signUp {
-	text-align: right;
+#userId {
+	display : inline-block;
+}
+#button {
+	display : inline-block;
+}
+#password {
+	display : inline-block;
+}
+#signUp {
+	display : inline-block;
 }

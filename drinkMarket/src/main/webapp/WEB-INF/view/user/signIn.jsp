@@ -26,10 +26,20 @@
 <div id=asd>
 	<div id=sign >
 	<form id=signIn>
-		<input type="text" name="userId" placeholder="아이디를 입력하세요." /><br/>
-		<input type="password" name="userPassword" placeholder="페스워드를  입력하세요." /><br/>
-		<input type="button" id="button" value="signIn" />
-		<input type="button" id="signUp" value="signUp" />
+		<div id=userId>
+			<input type="text" name="userId" placeholder="아이디를 입력하세요." /><br/>
+		</div>
+		<div id=button>
+			<input type="button" value="signIn" />
+		</div>
+		<div>
+			<div id=password>
+				<input type="password" name="userPassword" placeholder="페스워드를  입력하세요." /><br/>
+			</div>
+			<div id=signUp>
+				<input type="button" id="signUp" value="signUp" />
+			</div>
+		</div>
 	</form>
 		
 	</div>
