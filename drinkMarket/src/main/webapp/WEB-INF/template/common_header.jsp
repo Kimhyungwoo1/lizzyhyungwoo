@@ -27,7 +27,6 @@
 					alert("구매 실패...");
 			});
 		});
-	});
 
 		$(".topnav").hover(function() {                    //마우스를 topnav에 오버시
 			$(this).parent().find(".subnav").slideDown('normal').show();                   //subnav가 내려옴.
