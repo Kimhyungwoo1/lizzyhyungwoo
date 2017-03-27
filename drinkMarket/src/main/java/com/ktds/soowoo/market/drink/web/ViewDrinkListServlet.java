@@ -10,8 +10,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ktds.soowoo.market.common.web.pager.ClassicPageExplorer;
-import com.ktds.soowoo.market.common.web.pager.PageExplorer;
 import com.ktds.soowoo.market.country.service.CountryService;
 import com.ktds.soowoo.market.country.service.CountryServiceImpl;
 import com.ktds.soowoo.market.country.vo.CountryVO;
@@ -23,6 +21,8 @@ import com.ktds.soowoo.market.type.service.TypeService;
 import com.ktds.soowoo.market.type.service.TypeServiceImpl;
 import com.ktds.soowoo.market.type.vo.TypeVO;
 import com.ktds.soowoo.market.user.vo.UserVO;
+import com.meister.commom.pager.ClassicPageExplorer;
+import com.meister.commom.pager.PageExplorer;
 
 public class ViewDrinkListServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

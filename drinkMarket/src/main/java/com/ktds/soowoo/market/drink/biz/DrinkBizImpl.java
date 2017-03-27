@@ -3,11 +3,11 @@ package com.ktds.soowoo.market.drink.biz;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.ktds.soowoo.market.common.web.pager.Pager;
 import com.ktds.soowoo.market.drink.dao.DrinkDao;
 import com.ktds.soowoo.market.drink.dao.DrinkDaoImpl;
 import com.ktds.soowoo.market.drink.vo.DrinkSearchVO;
 import com.ktds.soowoo.market.drink.vo.DrinkVO;
+import com.meister.commom.pager.Pager;
 
 public class DrinkBizImpl implements DrinkBiz {
 	

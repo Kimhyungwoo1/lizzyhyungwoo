@@ -1,7 +1,7 @@
 package com.ktds.soowoo.market.drink.vo;
 
-import com.ktds.soowoo.market.common.web.pager.Pager;
-import com.ktds.soowoo.market.common.web.pager.PagerFactory;
+import com.meister.commom.pager.Pager;
+import com.meister.commom.pager.PagerFactory;
 
 public class DrinkSearchVO {
 
